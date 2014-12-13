@@ -27,13 +27,14 @@ class Question extends CI_Controller {
         }
     }*/
     public function index(){
-        $this->load->model('questionModel');
-        $data['question']  = $this->questionModel->getQuestion($config['per_page'], $str);
-        $this->load->view('questionView', $data);
+        $data['questions']  = $this->Question_model->get_questions();
+        $this->load->view('questionsView', $data);
     }
 
-    public function getQuestion(){
-
+    public function show($question_id=0){
+        $q_data['question']  = $this->Question_model->get_question($question_id);
+        $a_data['answers'] = $this->Answer_model->get_answers($question_id);
+        $this->load->view('questionView', $q_data, $a_data);
     }
 
     public function setQuestion(){
