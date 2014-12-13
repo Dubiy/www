@@ -78,7 +78,7 @@ class Question_model extends CI_Model
 
     public function get_answer($question_id='')
     {
-        $this
+        // $this
     }
 
     function delete_no_answer()

@@ -112,6 +112,7 @@ if (!function_exists('login')) {
 if (!function_exists('time_since')) {
   function time_since($since, &$between_ = 0, $addbr = FALSE) {
     $since = strtotime(date('Y-m-d H:i:s')) - strtotime($since);
+
     $sign = '';
     if ($since < 0) {
       $sign = '-';
@@ -127,6 +128,8 @@ if (!function_exists('time_since')) {
         array(60 , 'MIN'),
         array(1 , 'SEC')
     );
+
+    
     for ($i = 0, $j = count($chunks); $i < $j; $i++) {
         $seconds = $chunks[$i][0];
         $name = $chunks[$i][1];
