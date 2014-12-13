@@ -1,0 +1,12 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteCond $1 !^(index\.php|verstka|js|images|upload|css|sounds|video|img|jwplayer|thumbnails|sxd|user_guide|flash|robots\.txt|thumb\.php|0\.png|SQLyogTunnel\.php)
+RewriteRule ^(.*)$ /index.php?$1 [L]
+php_value upload_max_filesize 25M
+php_value post_max_size 25M
+##Для ускорение кеширования файлов
+RewriteEngine on
+RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
+Options -Indexes
+##Redmine::Configuration['scm_subversion_command'] || "svn"

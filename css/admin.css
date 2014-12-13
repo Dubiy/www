@@ -1,0 +1,1070 @@
+  body {
+    font-family: verdana;
+    font-size: 12px;
+  }
+
+  a.btn {
+    border: 1px solid gray;
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px;
+    clear: both;
+    display: inline-block;
+  }
+
+  .admin_title strong {
+    color: #a90000;
+    font-size: 18px;
+  }
+
+  .admin_title strong a {
+    color: #a90000;
+  }
+
+  .admin_title {
+    color: #535353;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 40px;
+    margin: 20px;
+  }
+
+  .admin_module_title {
+    float: right;
+    color: #535353;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 20px;
+    line-height: 40px;
+  }
+
+  .megawrapper {
+    margin: 0 auto;
+    width: 1040px;
+  }
+
+  .wrapper {
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    float: right;
+  }
+
+  .header_admin {
+    height: 40px;
+    border: 1px solid #b3b3b3;
+    margin-bottom: 6px;
+    line-height: 35px;
+  }
+
+  .header_admin.msg {
+    text-indent: 15px;
+  }
+
+  .block_admin {
+    /*height: 42px;*/
+    border: 1px solid #b3b3b3;
+    margin-bottom: 6px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .block_admin a.menu_items {
+    color: #535353;
+    text-decoration: underlined;
+    text-transform: uppercase;
+    margin: 10px;
+    /*line-height: 40px;*/
+
+  }
+
+  .block_admin a.menu_item_right {
+    margin-top: 0;
+    float: right;
+    color: #db3939;
+  }
+
+  .admin_main_menu {
+    /*position: absolute;*/
+    float: left;
+    position: relative;
+    top: 45px;
+    text-transform: uppercase;
+    line-height: 19px;
+  }
+
+  .admin_main_menu ul li {
+    text-align: right;
+  }
+
+  .admin_main_menu ul li.separator {
+    border-top: 1px solid #ccc;
+  }
+
+
+  .admin_main_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    width: 130px;
+  }
+
+  .admin_main_menu a {
+    color: #535353;
+    text-decoration: none;
+  }
+
+  .admin_main_menu a.active {
+    color: #a90000;
+  }
+
+.question {
+    margin-top: 5px;
+  }
+
+  .question_left_block {
+    float: left;
+    width: 320px;
+  }
+
+  .question_left_block .datetime {
+    display: inline-block;
+    width: 57px;
+    height: 20px;
+    background-color: #eaeaea;
+    margin-right: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #7a7a7a;
+    float: left;
+  }
+
+  .question_left_block .nickname {
+    display: inline-block;
+    width: 204px;
+    height: 20px;
+    background-color: #eaeaea;
+    margin-right: 0;
+    line-height: 20px;
+    padding-left: 5px;
+    color: #7a7a7a;
+    float: left;
+  }
+
+  .question_left_block .user_controll {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background: url(/img/admin/edit_user.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .question_left_block .user_controll a{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  .question_left_block .question_text {
+    width: 275px;
+    word-wrap: break-word;
+    /*height: 75px;*/
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #9e9e9e;
+  }
+
+  .question_right_block {
+    float: right;
+    width: 540px;
+  }
+
+  .question_right_block .answer {
+    display: inline-block;
+    width: 450px;
+    height: 98px;
+    border: 1px solid #dcdcdc;
+    font-family: verdana;
+    font-size: 12px;
+    color: #b3b3b3;
+  }
+
+  .question_right_block .question_controll {
+    display: inline-block;
+    width: 48px;
+    height: 20px;
+    margin-left: 10px;
+    position: relative;
+    top: -50px;
+    width: 70px;
+  }
+
+  .question_right_block .question_controll .accept {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/admin/accept.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .question .delete {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background: url(/img/admin/delete.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .notification .datetime {
+    display: inline-block;
+    width: 57px;
+    height: 20px;
+    background-color: #eaeaea;
+    margin-right: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #7a7a7a;
+    float: left;
+  }
+
+  .notification .notification_text {
+    display: inline-block;
+    width: 710px;
+    min-height: 20px;
+    background-color: #eaeaea;
+    margin-right: 0;
+    margin-bottom: 5px;
+    line-height: 20px;
+    padding-left: 5px;
+    color: #7a7a7a;
+    float: left;
+  }
+
+  .add_notification textarea {
+    display: inline-block;
+    width: 470px;
+    height: 98px;
+    border: 1px solid #dcdcdc;
+    font-family: verdana;
+    font-size: 12px;
+    color: #b3b3b3;
+  }
+
+
+  .add_notification .accept {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    background: url(/img/admin/accept.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .notification .delete {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background: url(/img/admin/delete.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .users_info div {
+    height: 17px;
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+
+  .users_info span {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .users_find input, .users_filter input, .users_filter select {
+    width: 221px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: 1px solid #dcdcdc;
+    margin-top: 5px;
+    margin-left: 8px;
+    float: left;
+    display: inline-block;
+    color: #7B7B7B;
+  }
+
+  .users_find input {
+    width: 169px;
+  }
+
+  .users_filter .input_image, .users_find .input_image {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    margin-left: 10px;
+  }
+
+  .pagination {
+    text-align: center;
+  }
+  .pagination a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid #eaeaea;
+    text-decoration: none;
+    line-height: 20px;
+    color: #7B7B7B;
+  }
+
+  .pagination a.active {
+    background-color: #B5F2A2;
+    color: black;
+  }
+
+  .hidden_calendar {
+    display: none;
+  }
+
+ .hidden {
+    display: none;
+  }  
+
+  .editcurrent_user {
+    display: block;
+    height: auto !important;
+    width: 100%;
+    margin: 0 !important;
+    background: 0 !important;
+    position: relative;
+    margin-top: 5px !important;
+  }
+
+  .editcurrent_user input, .editcurrent_user select {
+    width: 221px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 5px;
+    float: left;
+  }
+
+  .editcurrent_user .write_sms {
+    float: left;
+    background: url(/img/write_sms.png) no-repeat;
+    width: 20px;
+    height: 20px;
+  }
+
+  .editcurrent_user .controll {
+    display: inline-block;
+    width: 48px;
+    height: 20px;
+    /*margin-left: 20px;*/
+    /*float: right;*/
+  }
+
+  .editcurrent_user .edit_status .controll .accept {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/admin/accept.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .editcurrent_user .edit_status .controll .cancel {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 3px;
+    background: url(/img/admin/cancel.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .editcurrent_user .edit_status .controll .login_as_user {
+    float: left;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.10);
+    padding-right: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .editcurrent_user .reset_this_user_password {
+    display: block;
+    float: left;
+    border: 1px solid #b3b3b3;
+    cursor: pointer;
+    width: 221px;
+  }
+
+  .userlist_header > div {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 15px;
+    color: #7b7b7b;
+  }
+
+  .userlist_header > div > a {
+    text-decoration: none;
+    color: #7b7b7b;
+  }
+
+  .userlist_header > div > a:hover {
+    text-decoration: underline;
+    color: #7b7b7b;
+  }
+
+  .userlist_body .user .online, .userlist_header .online{
+    width: 57px;
+  }
+
+  .userlist_body .user .nickname, .userlist_header .nickname {
+    width: 250px;
+  }
+
+  .userlist_body .user .cash, .userlist_header .cash {
+    width: 86px;
+  }
+
+  .userlist_body .user .account, .userlist_header .account {
+    width: 80px;
+  }
+
+  .userlist_body .user .ban, .userlist_header .ban {
+    width: 138px;
+  }
+
+  .userlist_body .user .controll, .userlist_header .controll {
+    width: 174px;
+    background: 0;
+  }
+
+  .userlist_body .user .email, .userlist_body .user .phone, .userlist_body .user .premium_to, .userlist_body .user .banned_to {
+    display: none;
+  }
+
+  .userlist_body .user .controll .banned_chat {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/admin/banned_chat.png) no-repeat;
+    cursor: pointer;
+    margin-right: 5px;
+    opacity: 0.5;
+  }
+
+  .userlist_body .user .controll .banned_chat.active {
+    opacity: 1;
+  }
+
+  .userlist_body .user .controll .edit {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/admin/edit_user.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .userlist_body .user .controll .delete {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    float: left;
+    background: url(/img/admin/delete.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .userlist_body .user .controll .star {
+    width: 20px;
+    height: 19px;
+    margin-right: 5px;
+    float: left;
+    background: url(/img/admin/star.png) no-repeat bottom;
+    cursor: pointer;
+  }
+
+  .userlist_body .user .controll .star.active {
+    background: url(/img/admin/star.png) no-repeat top;
+  }
+
+  .userlist_body .user .controll .vk_profile, .userlist_body .user .controll .fb_profile {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    text-indent: 0;
+    float: left;
+  }
+
+
+  .userlist_body .user {
+    clear: both;
+    margin-top: -6px;
+  }
+
+
+  .userlist_body .user > div {
+    text-indent: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: #eaeaea;
+    float: left;
+    margin-right: 15px;
+    color: #7b7b7b;
+  }
+
+  .userlist_body .editing > div {
+    background-color: #b5f2a2;
+  }
+
+  .users_filter {
+    width: 371px;
+    height: 114px;
+    border: 1px solid #b3b3b3;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    float: left;
+  }
+
+  .users_find {
+    width: 220px;
+    height: 114px;
+    border: 1px solid #b3b3b3;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    float: left;
+  }
+
+  .users_info {
+    width: 291px;
+    height: 114px;
+    border: 1px solid #b3b3b3;
+    display: inline-block;
+    margin-bottom: 6px;
+    float: left;
+  }
+
+  .tickers_header div{
+    display: inline-block;
+    color: #a7a7a7;
+  }
+
+  .tickers_header .tickers_header_ticker {
+    width: 65px;
+  }
+
+  .tickers_header .tickers_header_short {
+    width: 365px;
+  }
+
+
+
+  .ticker {
+    margin-top: 20px;
+  }
+
+  .ticker > div {
+    display: inline-block;
+    float: left;
+  }
+
+  .ticker .ticker_name {
+    width:70px;
+    font-size: 17px;
+    font-weight: bold;
+
+  }
+
+  .ticker_fields select, .ticker_fields input, .ticker_fields textarea {
+    width: 255px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 7px;
+    margin-right: 10px;
+    float: left;
+    color: #7B7B7B;
+  }
+
+  .ticker_fields select {
+    background-color: #eaeaea;
+    border-color: #eaeaea;
+    outline: 0;
+  }
+
+  .ticker_fields input.index {
+    width: 102px;
+    color: #7a7a7a;
+  }
+
+  .ticker_fields .accept {
+    width: 20px;
+    height: 20px;
+    background: url(/img/admin/accept.png) no-repeat;
+    cursor: pointer;
+    margin-left: 7px;
+    display: inline-block;
+    float: right;
+  }
+
+  .ticker_fields .additional {
+    clear: both;
+    padding-top: 5px;
+  }
+
+  input.checkbox {
+    width: auto;
+  }
+
+  label.checkboxlabel  {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 0;
+    float: none;
+  }
+
+  .additional input.file {
+    float: none;
+  }
+
+  label.checkboxlabel {
+    float: left;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .wysiwyg {
+    height: 98px;
+    position: relative;
+    float: left;
+    border: 1px solid #dcdcdc;
+  }
+
+  .wysiwyg iframe {
+    height: 98px;
+  }
+
+
+  .wysiwyg ul.toolbar {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .wysiwyg ul.toolbar li{
+    background-color: white !important;
+  }
+
+  .ticker_fields textarea.comment {
+    width: 255px;
+    height: 98px;
+  }
+
+
+  .ticker .short_term, .ticker .long_term {
+    width: 370px;
+  }
+
+  .ticker .short_term .form, .ticker .long_term .form {
+    height: 160px;
+  }
+
+  .ticker .short_term .form .time, .ticker .long_term .form .time {
+    width: 57px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    background-color: #eaeaea;
+    color: #7a7a7a;
+  }
+
+  .ticker .short_term .form .ticker_fields, .ticker .long_term .form .ticker_fields {
+    width: 285px;
+    margin-left: 16px;
+    float: left;
+  }
+
+
+  .ticker .controll {
+    width: 50px;
+    float: right;
+  }
+
+  .ticker .controll .refresh {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/admin/refresh.png) no-repeat;
+    cursor: pointer;
+  }
+
+  .ticker .controll .trash {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background: url(/img/admin/trash.png) no-repeat;
+    cursor: pointer;
+  }
+
+
+  .add_ticker a {
+    color: #7b7b7b;
+    line-height: 20px;
+    float: right;
+    margin-left: 10px;
+  }
+
+  .add_ticker .ticker_name {
+    width: 57px;
+  }
+
+  .add_ticker input {
+    width: 255px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: 1px solid #dcdcdc;
+    margin-top: 0px;
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
+    color: #7B7B7B;
+  }
+
+  .add_ticker .add_ticker_accept {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    float: left;
+  }
+
+  .load_all_recomendations {
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    float: right;
+    margin-top: 10px;
+  }
+
+
+  .ticker .history {
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .history .record {
+    clear: both;
+  }
+
+  .record .time {
+    width: 57px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #e4ffbe;
+    color: #7a7a7a;
+    display: inline-block;
+    float: left;
+
+  }
+
+  .record .info_fields {
+    width: 284px;
+    color: #7a7a7a;
+    display: inline-block;
+    float: left;
+    margin-left: 16px;
+  }
+
+  .record .type, .record .index, .record .text {
+    width: 257px;
+    display: inline-block;
+    float: left;
+    height: 20px;
+    text-indent: 5px;
+    margin-bottom: 6px;
+  }
+
+  .record .type {
+    background-color: #e4ffbe;
+    line-height: 20px;
+  }
+
+ .record .delete {
+    display: inline-block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: url(/img/admin/delete.png) no-repeat;
+    cursor: pointer;
+ }
+
+  .lets_ban_this_user {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #eaeaea;
+    color: #7b7b7b;
+    outline: 0;
+  }
+
+  .preview_add_video_form {
+  float: right;
+  width: 560px;
+  height: 120px;
+  position: relative;
+}
+
+.preview_add_video_form .thumbnail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 90px;
+}
+
+
+
+.block_admin.add_video {
+  height: 120px;
+}
+
+.add_video_form {
+  width: 300px;
+  float: left;
+  display: block;
+  height: 120px;
+}
+
+.add_video_form input, .add_video_form textarea {
+  width: 100%;
+}
+
+.add_video_form textarea {
+  height: 70px;
+  padding: 0;
+  padding-left: 2px;
+}
+
+.add_video_form .accept {
+  display: block;
+}
+
+.add_video_form .accept {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(/img/admin/accept.png) no-repeat;
+  cursor: pointer;
+  float: right;
+}
+
+.video_record_line {
+  height: 110px;
+  position: relative;
+  padding-left: 140px;
+  border-bottom: 1px dashed gray;
+}
+
+.video_record_line .thumbnail {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.video_record_line .delete {
+  width: 20px;
+  height: 20px;
+  float: right;
+  background: url(/img/admin/delete.png) no-repeat;
+  cursor: pointer;
+  position: relative;
+  top: -20px;
+}
+
+.block_admin.deleted .del_msg {
+  transition:background-color 0.3s ease;
+  -webkit-transition:background-color 0.3s ease;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  overflow: hidden;
+}
+
+.block_admin.deleted .del_msg:hover {
+  border-bottom: 1px solid #ccc;
+  background-color: #eee;
+}
+
+.block_admin.deleted .del_msg .info .room_title {
+  color: #000;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.block_admin.deleted .del_msg .info .rating {
+  float: right;
+}
+
+.block_admin.deleted .del_msg .original {
+  /*border-left: 3px solid red;*/
+  /*padding-left: 1px;*/
+  clear: both;
+}
+
+.block_admin.deleted .del_msg .modered {
+  /*margin-left: 10px;*/
+  border-left: 3px solid gray;
+  background-color: #f7f7f7;
+  padding-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.block_admin.deleted .del_msg .original .user_link, .block_admin.deleted .del_msg .modered .user_link {
+  float: left;
+}
+
+.block_admin.deleted .del_msg .original .datetime, .block_admin.deleted .del_msg .modered .datetime {
+  float: right;
+}
+
+.block_admin.deleted .del_msg .controll_bar {
+  transition:All 0.3s ease;
+  -webkit-transition:All 0.3s ease;
+  position: absolute;
+  padding-top: 3px;
+  border-radius: 0 0 5px 5px;
+  padding-bottom: 3px;
+  top: -30px;
+  right: 50px;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.block_admin.deleted .del_msg:hover .controll_bar {
+  top: 0;
+}
+
+.block_admin.deleted .del_msg .controll_bar .controll {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.block_admin.deleted .del_msg .controll_bar .controll.delete {
+  background: url(/img/admin/delete.png) no-repeat;
+}
+
+.block_admin.deleted .del_msg .controll_bar .controll.accept {
+  background: url(/img/admin/accept.png) no-repeat;
+}
+
+.block_admin.deleted .del_msg .controll_bar .controll.lock {
+  background: url(/img/admin/lock.png) no-repeat;
+}
+
+.block_admin.rooms .room {
+  border-bottom: 1px solid #eee;
+  height: 22px;
+  line-height: 22px;
+}
+
+.block_admin.rooms .room span {
+  display: inline-block;
+  opacity: 0;
+  margin-left: 5px;
+  transition:All 0.3s ease;
+  -webkit-transition:All 0.3s ease;
+}
+
+.block_admin.rooms .room .title {
+  opacity: 1;
+  margin-left: 0;
+}
+
+.block_admin.rooms .room .author {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.block_admin.rooms .room .author a {
+  color: #444;
+}
+
+.block_admin.rooms .room .rating {
+  background-color: #ccc;
+  /*border: 1px solid red;*/
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.block_admin.rooms .room .delete, .block_admin.rooms .room .edit, .block_admin.rooms .room .fix, .block_admin.rooms .room .move {
+  float: right;
+  width: 22px;
+  height: 22px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.block_admin.rooms .room .move {
+  background: url(/img/admin/move.png) no-repeat center center;
+}
+
+.block_admin.rooms .room .edit {
+  background: url(/img/admin/refresh.png) no-repeat;    
+}
+
+.block_admin.rooms .room .delete {
+  background: url(/img/admin/trash.png) no-repeat;    
+}
+
+
+.block_admin.rooms .room .fix {
+  transition:All 0.5s ease;
+  -webkit-transition:All 0.5s ease;
+  background: url(/img/admin/pin.png) no-repeat;    
+  opacity: 0;
+}
+
+.block_admin.rooms .room:hover .fix {
+  opacity: 0.3;
+}
+
+.block_admin.rooms .room:hover .fix.active, .block_admin.rooms .room .fix:hover {
+  opacity: 1;
+}
+
+.block_admin.rooms .room:hover {
+  background-color: #eee;
+  border-bottom: 1px solid #aaa;
+}
+
+.block_admin.rooms .room:hover span {
+  opacity: 1;
+}

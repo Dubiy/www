@@ -1,0 +1,398 @@
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,a,strong, b, u, i, center, dl, dt, dd, li, form, label, tfoot, embed, footer, header,ol, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  background-repeat: no-repeat
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: "PT Sans";
+  color: #afafaf;
+  /*background-color: #bbb;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+
+}
+
+
+.popup_padding {
+  padding: 30px;
+}
+
+.popup_padding.no_bottom{
+  padding-bottom: 0;
+}
+
+.block {
+  display: block !important;
+  width: 100%;
+}
+
+label {
+  display: block;
+  color: #afafaf;
+}
+
+select {
+  border: 1px solid #343434;
+  background: url(/images/chat/select_arrow.png) no-repeat right center #5d5d5d;
+  color: #afafaf;
+  font-family: "PT Sans";
+  text-indent: 12px;
+  font-size: 14px;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*margin-bottom: 24px;*/
+}
+
+input {
+  border: 1px solid #343434;
+  background-color: #3f3f3f;
+  color: #afafaf;
+  font-family: "PT Sans";
+  text-indent: 12px;
+  font-size: 14px;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  outline: 0;
+  margin-bottom: 24px;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #343434;
+  background-color: #3f3f3f;
+  color: #afafaf;
+  font-family: "PT Sans";
+  font-size: 14px;
+  width: 100%;
+  height: 90px;
+  /*line-height: 35px;*/
+  outline: 0;
+  margin-bottom: 24px;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+input[type=submit] {
+  background-color: #703233;
+  text-transform: uppercase;
+}
+
+.submit {
+  border: 1px solid #343434;
+  color: #afafaf;
+  font-family: "PT Sans";
+  font-size: 14px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  outline: 0;
+  margin-bottom: 24px;
+  cursor: pointer;
+  background-color: #703233;
+  text-transform: uppercase;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-indent: 0;
+}
+
+
+.clear {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.add_prognose_form label {
+  width: 120px;
+  display: inline-block;
+}
+
+form input.problem {
+  border: 1px solid red;
+}
+
+.add_prognose_form input {
+  /*border: 1px solid gray;*/
+}
+
+.msg {
+  border: 1px dashed #343434;
+  margin-bottom: 24px;
+  padding: 12px;
+}
+
+.body_container {
+  /*padding: 5px;*/
+  width: 100%;
+  height: 100%;
+  overflow-y:auto; 
+  -webkit-overflow-scrolling:touch;
+}
+
+.attach_video .preview {
+  border: 1px solid gray;
+  padding: 5px;
+  margin-top: 10px;
+  display: none;
+}
+
+.attach_video .preview img {
+  max-width: 100%;
+}
+
+.attach_video .msg {
+  color: #cb5353;
+  /*background-color: #cb5353;*/
+  text-indent: 5px;
+  margin-bottom: 5px;
+  /*border: 1px dashed gray;*/
+}
+
+
+.edit_profile > div {
+  margin-bottom: 15px;
+}
+
+.edit_profile .nickname {
+    /*margin-bottom: 15px;*/
+}
+
+.edit_profile .nickname .submit, .edit_profile .experience .submit {
+  display: block;
+  width: 100%;
+}
+
+.edit_profile .social {
+  clear: both;
+  /*padding-top: 15px;*/
+}
+
+.edit_profile .social .active div a {
+  height: 48px;
+  margin-bottom: 10px;
+  line-height: 48px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 58px;
+  display: inline-block;
+}
+
+.edit_profile .social .active .fb a {
+  background-image: url(/images/chat/fb.png)
+}
+
+.edit_profile .social .active .vk a {
+  background-image: url(/images/chat/vk.png)
+}
+
+.edit_profile .social .active .tw a {
+  background-image: url(/images/chat/tw.png)
+}
+
+.edit_profile .social .active .gplus a {
+  background-image: url(/images/chat/gplus.png)
+}
+
+.edit_profile .social .active .unlink {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #eee;
+  padding: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.edit_profile .social .buttons > a {
+  width: 93px;
+  height: 24px;
+  background: url(/images/social.buttons.png);
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.edit_profile .social .buttons > a:hover {
+  background-position-y: 48px;
+}
+
+.edit_profile .social .buttons > a:active {
+  background-position-y: 23px;
+}
+
+.edit_profile .social .buttons .vk {
+  background-position-x: -92px;
+  width: 101px;
+}
+
+.edit_profile .social .buttons .tw {
+  background-position-x: -193px;
+} 
+
+.edit_profile .social .buttons .gplus {
+  background-position-x: -286px;
+}  
+
+
+.edit_profile .avatar {
+  min-height: 49px;
+}
+
+.edit_profile .avatar .img {
+  float: left;
+  /*margin: 5px;*/
+  /*margin-left: 0;*/
+  width: 49px;
+  height: 49px;
+  background: url(/images/chat/userpic_default_49.png) no-repeat center center;
+}
+
+.edit_profile .avatar table {
+  margin-bottom: 15px;
+}
+
+.edit_profile .avatar input {
+  height: 100%;
+
+}
+
+.edit_profile .avatar .file_wrapper {
+  position: relative;
+  height: 48px;
+}
+
+.edit_profile .avatar input:after {
+  content: "CHOOSE FILE";
+  border: 1px solid #343434;
+  background-color: #3f3f3f;
+  color: #afafaf;
+  font-family: "PT Sans";
+  text-indent: 12px;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 35px;
+  outline: 0;
+}
+
+.attach_meme .meme {
+  display: inline-block;
+  cursor: pointer;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.attach_meme .meme div {
+  width: 450px;
+  position: absolute;
+  left: -155px;
+  top: 0px;
+  height: 100%;
+  text-align: center;
+}
+
+.attach_meme .meme img {
+  display: inline-block;
+  height: 100%;
+}
+
+.popup_scroll {
+  /*background-color: yellow;*/
+}
+
+#ui-datepicker-div {
+  display: none;
+}
+
+#ui-datepicker-div {
+  border: 1px solid #aaaaaa;
+  background: #ffffff url(/css/ui/images/ui-bg_flat_30_cccccc_40x100.png) 50% 50%;
+  color: #222222;
+  font-size: 13px;
+}
+
+#ui-datepicker-div .ui-datepicker-prev, #ui-datepicker-div .ui-datepicker-next {
+  background-image: url(/css/ui/images/ui-icons_a83300_256x240.png);
+  text-indent: -9999;
+  color: transparent;
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin:3px;
+  overflow: hidden;
+}
+
+#ui-datepicker-div .ui-datepicker-prev {
+  float: left;
+  background-position: -82px -193px;
+}
+
+#ui-datepicker-div .ui-datepicker-next {
+  float: right;
+  background-position: -49px -193px;
+}
+
+#ui-datepicker-div .ui-datepicker-title {
+  text-align: center;
+  font-weight: normal;
+  font-family: arial;
+  height: 20px;
+  line-height: 20px;
+}
+
+#ui-datepicker-div .ui-datepicker-calendar a {
+  text-decoration: none;
+  color: #111;
+  padding: 5px;
+}
+
+.inputandsave {
+  height: 37px;
+  border: 1px solid #343434;
+  overflow: hidden;
+}
+
+.inputandsave input[type=text], .inputandsave select {
+  width: 50%;
+  float: left;
+  height: 100%;
+  border: 0px solid #343434;
+}
+
+.inputandsave input[type=submit], .inputandsave button, .inputandsave .submit {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50% !important;
+  float: left;
+  border: 0px solid #343434;
+  height: 100%;
+}
