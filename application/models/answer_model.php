@@ -1,21 +1,21 @@
 <?php
 
-class Question_model extends CI_Model
+class Answer_model extends CI_Model
 {
     function __construct()
     {
         parent::__construct();
     }
 
-    function get_question($question_id = '')
+    function get_answer($question_id = '')
     {
-        $this->db->select('questions.*, users.*')->from('questions')->where('questions.question_id', $question_id)->
-        join('users', 'users.user_id = questions.user_id', 'left')->limit(1);
+        $this->db->select('answer.*, users.*')->from('answer')->where('answer.answer_id', $answer_id)->
+        join('users', 'users.user_id = answer.user_id', 'left')->limit(1);
         $query = $this->db->get();
         return $query->result();
     }
 
-    function add_question($text)
+    function add_answer($text)
     {
         $this->db->insert('questions', array('user_id' => logged_in(), 'datetime' => date('Y-m-d H:i:s'), 'text' => $text));
         send_sms($this->config->item('my_trade_phone_number'), 'Q: ' . mb_substr($text, 0, 67));
@@ -23,7 +23,7 @@ class Question_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    function get_questions($type = 'all')
+    function get_answers($type = 'all')
     {
         $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
         $query = $this->db->get();
@@ -31,7 +31,7 @@ class Question_model extends CI_Model
     }
 
 
-    function get_user_questions($user_id = '0', $start_id = 0)
+    function get_user_answers($user_id = '0', $start_id = 0)
     {
         $this->db->select('questions.*, users.*')->
         from('questions')->
@@ -74,11 +74,6 @@ class Question_model extends CI_Model
     function set_answer($question_id = '', $answer = '', $private = '0')
     {
         $this->db->update('questions', array('answer' => $answer, 'answer_datetime' => date('Y-m-d H:i:s'), 'private' => $private), array('question_id' => $question_id));
-    }
-
-    public function get_answer($question_id='')
-    {
-        $this
     }
 
     function delete_no_answer()
