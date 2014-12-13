@@ -7,15 +7,14 @@
   $config['sitename_for_letters'] = 'DETI';
   // название сайта социальных сетях при розшаривании
   $config['sitename_onsharebuttons'] = 'DETI';
-
-  //посли изминений стилей или скриптов можно поменять значение, и у пользователей загрузится обновленная версия, и не будет кешей)
-  $config['script_style_version'] = '112';
   
-  //LONGPOLLING
+  $config['script_style_version'] = '1';
 
-  $config['longpolling'] = false;
-  
-  $config['sitelongpolling'] = false;
+  $config['account_type'] = array(
+      0 => 'user',
+      10 => 'admin'
+    );
+
 
   //поддерживаемые языки
   $config['languages'] = array('en', 'ru');
