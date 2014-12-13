@@ -15,7 +15,6 @@ class User extends CI_Controller {
     }
     
     public function login() {
-
         $data = array();
         if (!logged_in()) {
             if (isset($_POST['email'], $_POST['password'])) {
@@ -52,6 +51,36 @@ class User extends CI_Controller {
         } else {
             redirect('/', 'location');
         }
+    }
+
+public function register() {
+        $data = array();
+        if (!logged_in()) {
+            if (isset($_POST['email'])) {
+                $this->load->library('form_validation');
+                $this->form_validation->set_rules('email', 'Email', 'valid_email|callback__email_unique_check|required');
+                $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|alpha_numeric');
+                $this->form_validation->set_rules('age', 'Вік', 'required|is_natural');
+                $this->form_validation->set_rules('sex', 'Стать', 'required|is_natural');
+
+                if ($this->form_validation->run()) {
+                    $user_info = $this->User_model->register($_POST);
+                    redirect('/user/login', 'location');
+                }
+            }
+
+            $this->load->view('block/site_head', $data);
+            $this->load->view('user/reg_form', $data);
+            $this->load->view('block/site_foot', $data);
+
+        } else {
+            redirect('/', 'location');
+        }
+    }
+
+    public function logout() {
+        logout();
+        redirect('/', 'location');
     }
 
     public function forgot($user_id = '', $code = '') {
@@ -123,60 +152,7 @@ class User extends CI_Controller {
         }
     }
 
-    public function register() {
-        $data = array();
-        if (!logged_in()) {
-            if (isset($_GET['vkname']) && !isset($_POST['nickname'])) {
-                $_POST['nickname'] = $_GET['vkname'];
-                $data['msg'] = t('To proceed, enter your Email');
-            }
-            if (isset($_GET['vkid'])) {
-                $_POST['vk_profileid'] = $_GET['vkid'];
-            }
-            if (isset($_POST['email'])) {
-                $this->load->library('form_validation');
-                $this->form_validation->set_rules('email', t('Email'), 'valid_email|callback__email_unique_check|required');
-                $this->form_validation->set_rules('nickname', t('Nickname'));
-                $this->form_validation->set_rules('phone', t('Phone'));
-                if ($this->form_validation->run()) {
-                    $user_info = $this->User_model->register($_POST);
-
-                    //comment if activation required
-                    $this->User_model->activate($user_info['user_id']);
-                    $data['msg'] = t('User registered. A message with the password sent to your e-mail');
-                    send_email($user_info['email'], $this->config->item('email_subject_activation_ok'), '', 'register', (array) $user_info);
-                    $data['redirect'] = '/user/login';
-                    $data['redirect_time'] = '10000'; //ms
-
-                    /*
-                      // uncomment if activation required
-                      $data['msg'] = 'Successful registration. Sent to your email activation code';
-                      $data['redirect'] = '/user/login';
-                      $data['redirect_time'] = '10000'; //ms
-                      send_email($user_info['email'], $this->config->item('email_subject_activation'), '', 'activate', $user_info);
-                     */
-                }
-            }
-
-            $this->load->library('user_agent');
-            if ($this->agent->is_mobile() && (!isset($_SESSION['no_mobile'])) || isset($_GET['mobile'])) {
-                $this->load->view('mobile/block/site_head', $data);
-                $this->load->view('mobile/user/reg_form', $data);
-                $this->load->view('mobile/block/site_foot', $data);
-            } else {
-                $this->load->view('block/site_head', $data);
-                $this->load->view('user/reg_form', $data);
-                $this->load->view('block/site_foot', $data);
-            }
-        } else {
-            redirect('/', 'location');
-        }
-    }
-
-    public function logout() {
-        logout();
-        redirect('/', 'location');
-    }
+    
 
     function _email_unique_check($str) {
         $data['user'] = $this->User_model->get_user_by_email($str);

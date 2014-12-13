@@ -377,43 +377,20 @@ class User_model extends CI_Model {
 
 
   function register($array = '') {
-    //$password = md5($array['email'] . date('Y-m-d H:i:s') . rand(1, 100500));
-
-    do {
-      $password = generatePassword(10);
-      $passwords = $this->db->select('*')->
-                            from('users')->
-                            where('password', md5($password))->
-                            get()->
-                            result();
-    } while (is_array($passwords) && count($passwords));
 
     $record = array('email' => $array['email'],
-                    'password' => md5($password),
-                    'nickname' => $array['nickname'],
-                    'phone' => $array['phone'],
-                    'pass' => $password  //unhashed password, would be deleted after user activation
+                    'password' => $array['password'],
+                    'age' => $array['age'],
+                    'sex' => $array['sex'],
+                    'account_type' => 0
     );
-    if (isset($array['vk_profileid'])) {
-      $record['vk_profileid'] = $array['vk_profileid'];
-    }
-    if (isset($array['fb_profileid'])) {
-      $record['fb_profileid'] = $array['fb_profileid'];
-    }
 
     $this->db->insert('users', $record);
     $record['user_id'] = $this->db->insert_id();
 
-    //включаем новому пользователю все тикеры.
-    $tickers = $this->db->select('*')->from('tickers')->get()->result();
-    if (is_array($tickers) && count($tickers)) {
-      foreach ($tickers as $ticker) {
-        $this->db->insert('ticker_holds', array('ticker_id' => $ticker->ticker_id, 'user_id' => $record['user_id']));
-      }
-    }
+    $user = $this->get_user($record['user_id']);
+    login($user[0]);
 
-    $record['activation_code'] = md5(md5($record['password']));
-    $record['password'] = $password;
     return $record;
   }
 

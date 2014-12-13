@@ -31,4 +31,8 @@
       <input type="submit" value="Вхід">
     </div>
 
+    <div class="reg_link">
+      <a href="/user/register">Реєстрація</a>
+    </div>
+
   </form>
