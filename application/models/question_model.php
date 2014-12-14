@@ -26,10 +26,10 @@ class Question_model extends CI_Model
             return $type;
         }*/
 
-    function get_questions($type = 'all')
+    function get_questions($type = 'all_questions')
     {   //$type=$this->get_questions();
         switch($type){
-        case "all":
+        case "all_questions":
             $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
             $query = $this->db->get();
             return $query->result();
@@ -42,7 +42,7 @@ GROUP BY `questions`.`question_id`";
             $arr = $this->db->query($sql)->result();
             if (is_array($arr) && count($arr)) {
                 foreach ($arr as $key => $record) {
-                    if ($arr[$key]->answers_count == 0) {
+                    if ($arr[$key]->answers_count > 0) {
                         unset($arr[$key]);
                         //да, ми знаэмо що це лайно. проблема вирішена в файлі Question_site_model.php
                     }
@@ -59,7 +59,7 @@ GROUP BY `questions`.`question_id`";
             $arr = $this->db->query($sql)->result();
             if (is_array($arr) && count($arr)) {
                 foreach ($arr as $key => $record) {
-                    if ($arr[$key]->answers_count > 0) {
+                    if ($arr[$key]->answers_count == 0) {
                         unset($arr[$key]);
                         //да, ми знаэмо що це лайно. проблема вирішена в файлі Question_site_model.php
                     }

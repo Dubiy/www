@@ -1,6 +1,6 @@
 <div class="block_admin">
 
-  <a href="/admin/questions/all" class="menu_items">Все</a>
+  <a href="/admin/questions/all_questions" class="menu_items">Все</a>
   <a href="/admin/questions/no_answer" class="menu_items">Без ответов</a>
   <a href="/admin/questions/answered" class="menu_items">С ответами</a>
   <a href="/admin/questions/psych" class="menu_items">Помощь психолога</a>
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="question_text">
-              <a href="/question/show/<?php echo $question->question_id;?>"><?php echo $question->text;?></a>
+              <a href="/show/<?php echo $question->question_id;?>"><?php echo $question->text;?></a>
           </div>
         </div>
       </div>
