@@ -24,7 +24,7 @@
       if (isset($answers) && is_array($answers) && count($answers)) {
         foreach ($answers as $answer) {
 ?>
-          <div class="answer">
+          <div class="answer" answer_id="<?php echo $answer->answer_id; ?>">
             <div class="answer_left">
               <div class="rating">
                 <div class="plus">+</div>

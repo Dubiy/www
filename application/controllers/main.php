@@ -19,7 +19,7 @@ function __construct() {
     $data['age_start'] = $age_start;
     $data['age_stop'] = $age_stop;
   
-    // echo $filter .'/'. $category . '/' . $age_start .'/'. $age_stop;
+    echo $filter .'/'. $category . '/' . $age_start .'/'. $age_stop;
     $data['questions'] = $this->Question_site_model->get_questions($filter, $category, $age_start, $age_stop);
     
     $this->load->view('block/site_head', $data);
