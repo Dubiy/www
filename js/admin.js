@@ -367,10 +367,7 @@
       var this_ = this;
       //if (confirm('Действительно хотите удалить вопрос?')) {
         jQuery.post('/admin/question', {'action': 'delete', 'question_id': jQuery(this).parent().parent().parent().attr('question_id')}, function(data) {
-          jQuery('.unanswered_count').html(data);
-          jQuery(this_).parent().parent().parent().hide(500, function() {
-            jQuery(this).remove();
-          });
+          document.location.reload();
         });
       //}
     });

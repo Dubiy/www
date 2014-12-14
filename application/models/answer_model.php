@@ -23,9 +23,9 @@ class Answer_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    function get_answers($type = 'all')
+    function get_answers($question_id)
     {
-        $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
+        $this->db->select('answers.*, users.*')->from('answers')->join('users', 'users.user_id = answers.user_id', 'left')->where('question_id',$question_id);
         $query = $this->db->get();
         return $query->result();
     }

@@ -22,12 +22,63 @@ class Question_model extends CI_Model
         // send_sms('+380937444376', 'Q: ' . mb_substr($text, 0, 67));
         return $this->db->insert_id();
     }
+        /*public function get_questions($type = 'all'){
+            return $type;
+        }*/
 
     function get_questions($type = 'all')
-    {
-        $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
-        $query = $this->db->get();
-        return $query->result();
+    {   //$type=$this->get_questions();
+        switch($type){
+        case "all":
+            $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
+            $query = $this->db->get();
+            return $query->result();
+            break;
+        case "no_answer":
+            $sql = "SELECT questions.*, users.*, COUNT(`answers`.`answer_id`) AS `answers_count` FROM `questions`
+LEFT JOIN `answers` ON `answers`.`question_id` = `questions`.question_id
+LEFT JOIN `users` ON `users`.`user_id` = `questions`.user_id
+GROUP BY `questions`.`question_id`";
+            $arr = $this->db->query($sql)->result();
+            if (is_array($arr) && count($arr)) {
+                foreach ($arr as $key => $record) {
+                    if ($arr[$key]->answers_count == 0) {
+                        unset($arr[$key]);
+                        //да, ми знаэмо що це лайно. проблема вирішена в файлі Question_site_model.php
+                    }
+                }
+            }
+            return $arr;
+
+            break;
+        case "answered":
+            $sql = "SELECT questions.*, users.*, COUNT(`answers`.`answer_id`) AS `answers_count` FROM `questions`
+LEFT JOIN `answers` ON `answers`.`question_id` = `questions`.question_id
+LEFT JOIN `users` ON `users`.`user_id` = `questions`.user_id
+GROUP BY `questions`.`question_id`";
+            $arr = $this->db->query($sql)->result();
+            if (is_array($arr) && count($arr)) {
+                foreach ($arr as $key => $record) {
+                    if ($arr[$key]->answers_count > 0) {
+                        unset($arr[$key]);
+                        //да, ми знаэмо що це лайно. проблема вирішена в файлі Question_site_model.php
+                    }
+                }
+            }
+            return $arr;
+
+            break;
+        case "psych":
+            $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left')->where('psych','1');
+            $query = $this->db->get();
+
+            return $query->result();
+            break;
+
+        }
+
+
+
     }
 
 
@@ -58,13 +109,13 @@ class Question_model extends CI_Model
         return $this->db->query($sql)->result();
     }
 
-    function unanswered_count()
+    /*function unanswered_count()
     {
         $this->db->select('COUNT(*) as `count`')->from('questions')->where('(`questions`.`answer` IS NULL) OR (`questions`.`answer` = \'\')');
         $query = $this->db->get();
         $return = $query->result();
         return $return[0]->count;
-    }
+    }*/
 
     function delete_question($question_id)
     {
@@ -91,4 +142,6 @@ class Question_model extends CI_Model
         $sql = "DELETE FROM `questions` WHERE `answer` IS NOT NULL AND `answer` != '' AND (DATE(`answer_datetime`) = DATE('" . date('Y-m-d', strtotime('-1 day')) . "') OR DATE(`answer_datetime`) = DATE('" . date('Y-m-d', strtotime('-2 day')) . "'))";
         return $this->db->query($sql);
     }
+
+
 }
