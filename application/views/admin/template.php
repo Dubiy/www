@@ -14,9 +14,9 @@
     <div class="megawrapper">
       <div class="admin_main_menu">
         <ul>
-          <li><a href="/admin/users/" <?php echo ((strpos($this->uri->segment(2), 'user') !== FALSE) ? ('class="active"') : ('')); ?>>Користувачі</a></li>
+<!--          <li><a href="/admin/users/" --><?php //echo ((strpos($this->uri->segment(2), 'user') !== FALSE) ? ('class="active"') : ('')); ?><!-- >Користувачі</a></li>-->
           <li><a href="/admin/questions/no_answer" <?php echo (($this->uri->segment(2) == 'questions') ? ('class="active"') : ('')); ?>>Питання</a></li>
-          <li><a href="/admin/pages/" <?php echo (($this->uri->segment(2) == 'pages') ? ('class="active"') : ('')); ?>>Сторінки</a></li>
+<!--          <li><a href="/admin/pages/" --><?php //echo (($this->uri->segment(2) == 'pages') ? ('class="active"') : ('')); ?><!-- >Сторінки</a></li>-->
         </ul>
       </div>
       <div class="wrapper">

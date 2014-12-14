@@ -32,13 +32,20 @@ class Question extends CI_Controller {
     }
 
     public function show($question_id=0){
-        $q_data['question']  = $this->Question_model->get_question($question_id);
-        $a_data['answers'] = $this->Answer_model->get_answers($question_id);
-        $this->load->view('questionView', $q_data, $a_data);
+        $this->load->model('Answer_model');
+        $data['question']  = $this->Question_model->get_question($question_id);
+        $data['answers'] =$this->Answer_model->get_answers($question_id);
+        $this->load->view('questionView', $data);
     }
 
     public function setQuestion(){
 
+    }
+
+    public function deleteQuestion($question_id, $type){
+
+        $this->Question_model->delete_question($question_id);
+        redirect('/admin/questions/'.$type);
     }
 }
 ?>
