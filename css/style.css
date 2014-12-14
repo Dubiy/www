@@ -1,0 +1,17 @@
+.questions .question, .answers .answer {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.questions .question .question_left, .answers .answer .answer_left {
+  float: left;
+  width: 100px;
+  text-align: center;
+}
+.questions .question .answers_count {
+  float: right;
+}
+
+.questions .question .question_left .rating > div, .answers .answer .answer_left .rating > div {
+  display: inline-block;
+}

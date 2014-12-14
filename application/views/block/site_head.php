@@ -12,4 +12,13 @@
   <script src="/js/site.js?<?php echo $this->config->item('script_style_version'); ?>" type="text/javascript"></script>
 </head>
 <body >
+  <div>
+      <a href="/">Все вопросы</a> <br />
+      <a href="/parents">Вопросы родителей</a> <br />
+      <a href="/children">Вопросы детей</a> <br />
+      от <input type="text" name="age_start"> до <input type="text" name="age_stop"> <input type="submit">
+      <a href="/about">Про нас</a> <br />
+  </div>
+
+  <a href="/add_question">Задать вопрос</a>
  

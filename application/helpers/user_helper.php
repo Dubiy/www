@@ -46,6 +46,47 @@ if (!function_exists('admin')) {
   }
 }
 
+if (!function_exists('rating')) {
+  function rating($value = 0) {
+    if ($value > 0) {
+      return '+' . $value;
+    } else {
+      return $value;
+    }
+  }
+}
+
+if (!function_exists('question_type')) {
+  function question_type($value = 0) {
+    if ($value == 0) {
+      return 'Дети';
+    }
+    return 'Родители';
+  }
+}
+
+
+if (!function_exists('question_text')) {
+  function question_text($value = '') {
+    // $value
+    if (mb_strlen($value) > 200) {
+      return mb_substr($value, 0, 200) . '...';
+    }
+    return $value;
+  }
+}
+
+if (!function_exists('answer_type')) {
+  function answer_type($value = '') {
+    if ($value < 18) {
+      return 'Дети';
+    }
+    return 'Родители';
+  }
+}
+
+
+
 
 
 if (!function_exists('send_email')) {

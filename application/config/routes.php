@@ -41,15 +41,35 @@
 $route['default_controller'] = "main";
 $route['404_override'] = '';
 
+$route['parents'] = "main/index/all/parents";
+$route['(:any)/parents'] = "main/index/$1/parents";
 
-// $route['rooms/(:any)'] = "nutrade/index/rooms/$1";
-// $route['best'] = "nutrade/index/best/";
-// $route['roomslist'] = "nutrade/index/roomslist/";
-// $route['following'] = "nutrade/index/following/";
-// $route['activity'] = "nutrade/index/activity/";
-// $route['chats'] = "nutrade/index/chats/";
+$route['children'] = "main/index/all/children";
+$route['(:any)/children'] = "main/index/$1/children";
 
-$route['post/(:any)'] = "nutrade/index/post/$1";
+//???
+$route['all'] = "main/index/all/all";
+$route['(:any)/all'] = "main/index/$1/all";
+
+$route['top'] = "main/index/all/top";
+$route['(:any)/top'] = "main/index/$1/top";
+
+$route['best'] = "main/index/all/best";
+$route['(:any)/best'] = "main/index/$1/best";
+
+$route['age'] = "main/index/all/age";
+$route['(:any)/age'] = "main/index/$1/age";
+
+$route['age/(:num)'] = "main/index/all/age/$1";
+$route['(:any)/age/(:num)'] = "main/index/$1/age/$2";
+
+$route['age/(:num)/(:num)'] = "main/index/all/age/$1/$2";
+$route['(:any)/age/(:num)/(:num)'] = "main/index/$1/age/$2/$3";
+
+$route['show/(:num)'] = "main/question/$1";
+
+$route['add_question'] = "main/add_question";
+
 
 
 $route['page/(:any)'] = "page/index/$1";

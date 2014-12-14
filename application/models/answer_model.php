@@ -7,29 +7,29 @@ class Answer_model extends CI_Model
         parent::__construct();
     }
 
-    function get_answer($question_id = '')
+    function get_answers($question_id = '')
     {
-        $this->db->select('answer.*, users.*')->from('answer')->where('answer.answer_id', $answer_id)->
-        join('users', 'users.user_id = answer.user_id', 'left')->limit(1);
-        $query = $this->db->get();
-        return $query->result();
+        $question_id = (int)$question_id;
+        $sql = "SELECT `answers`.*, `users`.`age`, `users`.`account_type`, `users`.`sex` FROM `answers` 
+                LEFT JOIN `users` ON `users`.`user_id` = `answers`.`user_id`
+                WHERE `answers`.`question_id` = '$question_id'
+                ORDER BY `answers`.`rating` DESC";
+        return $this->db->query($sql)->result();
     }
 
-    function add_answer($text)
+    function add_answer($question_id = '', $text = '')
     {
-        $this->db->insert('questions', array('user_id' => logged_in(), 'datetime' => date('Y-m-d H:i:s'), 'text' => $text));
-        send_sms($this->config->item('my_trade_phone_number'), 'Q: ' . mb_substr($text, 0, 67));
-        // send_sms('+380937444376', 'Q: ' . mb_substr($text, 0, 67));
+        if ( ! logged_in()) {
+            return false;
+        }
+        $record = array('question_id' => $question_id,
+                        'user_id' => logged_in(),
+                        'text' => $text,
+                        'rating' => 0,
+                        'datetime' => date('Y-m-d H:i:s'));
+        $this->db->insert('answers', $record);
         return $this->db->insert_id();
     }
-
-    function get_answers($type = 'all')
-    {
-        $this->db->select('questions.*, users.*')->from('questions')->join('users', 'users.user_id = questions.user_id', 'left');
-        $query = $this->db->get();
-        return $query->result();
-    }
-
 
     function get_user_answers($user_id = '0', $start_id = 0)
     {

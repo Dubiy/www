@@ -115,7 +115,7 @@ $autoload['language'] = array('translate');
 |
 */
 
-$autoload['model'] = array('User_model', 'Question_model');
+$autoload['model'] = array('User_model', 'Question_model', 'Question_site_model');
 
 
 /* End of file autoload.php */
