@@ -173,9 +173,14 @@ ul.sidebar-nav {
 
 h1.sitetitle {
   padding-left: 400px;
+  text-indent: 88888px;
+  background: url(/img/lg2.png) no-repeat center center;
   position: absolute;
-  left: 20px;
-  top: 10px;
+left: 540px;
+width: 423px;
+height: 81px;
+top: -10px;
+
   font-size: 50px;
   color: #FF7804;
   /*text-shadow: 0 0 4px #E97f02;*/
