@@ -2,11 +2,11 @@
 
 
   // title сайта
-  $config['sitename'] = 'DETI';
+  $config['sitename'] = 'Поделись';
   // название сайта в письмах
-  $config['sitename_for_letters'] = 'DETI';
+  $config['sitename_for_letters'] = 'Поделись';
   // название сайта социальных сетях при розшаривании
-  $config['sitename_onsharebuttons'] = 'DETI';
+  $config['sitename_onsharebuttons'] = 'Поделись';
   
   $config['script_style_version'] = '1';
 

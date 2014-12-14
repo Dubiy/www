@@ -1,0 +1,62 @@
+.sidebar-nav li a{
+    color:#f0f0f0;
+}
+nav{
+    background-color:none;
+}
+.navbar{
+    min-height: 100px;
+    border-radius: none;
+    margin-bottom: 0px;
+}
+
+
+.navbar-default {
+    border-radius: none;
+    background-color: none;
+    background: none;
+    border-bottom-color: #ff0000;
+    border: none;
+}
+#sidebar-wrapper {
+    background: none;
+}
+.take_question_btn{
+    /*float: right;*/
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    padding: 10px 50px;
+}
+body{
+    background: url("/img/img/bg5.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+#questions{
+    margin-top: 30px;
+}
+.pagination{
+    float: right;
+}
+.post {
+    width: auto;
+    height: auto;
+}
+.post img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin: 10px;
+}
+
+h2{
+    padding-left: 100px;
+}
+
+.post p{
+    padding-top: 15px;
+  }

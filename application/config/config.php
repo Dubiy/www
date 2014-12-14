@@ -73,7 +73,7 @@ if (isset($_SESSION['language'])) {
   $config['language'] = $_SESSION['language'];
 } else {
   // $config['language'] = 'ru';
-  $config['language'] = 'en';
+  $config['language'] = 'ru';
 
   $_SESSION['language'] = $config['language'];
 }

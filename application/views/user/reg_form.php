@@ -16,7 +16,7 @@
 <?php
     echo $MSG;
 ?>
-   
+  <div class="reg_login_form"> 
   <form method="POST" action="">
     <div>
       <label>Email:</label>
@@ -27,7 +27,7 @@
       <input type="password" name="password">
     </div>
     <div>
-      <label>Вік:</label>
+      <label>Возраст:</label>
       <select name="age">
 <?php
         $res = '';
@@ -40,17 +40,18 @@
       </select>
     </div>
     <div>
-      <label>Стать:</label>
+      <label>Пол:</label>
       <select name="sex">
         <option value="1" <? echo ((isset($_POST['sex']) && $_POST['sex'] == 1) ? ('selected="selected"') : ('')) ?>>М</option>
         <option value="2" <? echo ((isset($_POST['sex']) && $_POST['sex'] == 2) ? ('selected="selected"') : ('')) ?>>Ж</option>
       </select>
     </div>
     <div>
-      <input type="submit" value="Реєстрація">
+      <input type="submit" class="submit btn btn-success" value="Регистрация">
+        <div class="reg_link">
+         <a href="/user/login" class="btn btn-primary submit">Логин</a>
+        </div>
     </div>
 
   </form>
-  <div class="reg_link">
-      <a href="/user/login">Логін</a>
   </div>

@@ -2,8 +2,9 @@
 <?php
   if (isset($question) && is_object($question)) {
 ?>
-    <div class="questions">
-      <div class="question" question_id="<?php echo $question->question_id; ?>">
+    <h2>Вопрос</h2>
+    <div class="questions single_page">
+      <div class="question type_<?php echo $question->type; ?>" question_id="<?php echo $question->question_id; ?>">
         <div class="question_left">
           <div class="rating">
             <div class="plus">+</div>
@@ -17,21 +18,21 @@
         <br clear="both" />
       </div>
     </div>
-
+    <h2>Ответы</h2>
     <div class="answers">
       <a name="answers"></a>
 <?php
       if (isset($answers) && is_array($answers) && count($answers)) {
-        foreach ($answers as $answer) {
+        foreach ($answers as $i => $answer) {
 ?>
-          <div class="answer" answer_id="<?php echo $answer->answer_id; ?>">
+          <div class="answer <?php echo (($i % 2 != 0) ? ('odd') : ('')); ?> type_<?php echo answer_type($answer->age, $answer->account_type, TRUE); ?>" answer_id="<?php echo $answer->answer_id; ?>">
             <div class="answer_left">
               <div class="rating">
                 <div class="plus">+</div>
                 <div class="value"><?php echo rating($answer->rating); ?></div>
                 <div class="minus">&dash;</div>
               </div>
-              <div class="type"><?php echo answer_type($answer->age); ?></div>
+              <div class="type"><?php echo answer_type($answer->age, $answer->account_type); ?></div>
             </div>
             <div class="text"><?php echo $answer->text; ?></a></div>
             <br clear="both" />
@@ -48,7 +49,7 @@
       <form method="POST" action="">
         <h3>Ответить</h3>
         <textarea name="answer"></textarea>
-        <input type="submit" value="Отправить">
+        <input type="submit" class="btn btn-success submit" value="Отправить">
       </form>
     </div>
 <?php

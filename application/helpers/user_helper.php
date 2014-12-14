@@ -69,18 +69,25 @@ if (!function_exists('question_type')) {
 if (!function_exists('question_text')) {
   function question_text($value = '') {
     // $value
-    if (mb_strlen($value) > 200) {
-      return mb_substr($value, 0, 200) . '...';
+    if (mb_strlen($value) > 600) {
+      return mb_substr($value, 0, 600) . '...';
     }
     return $value;
   }
 }
 
 if (!function_exists('answer_type')) {
-  function answer_type($value = '') {
+  function answer_type($value = '', $account_type = 0, $return_int = FALSE) {
+    if ($account_type == 10) {
+      if ($return_int) return 2;
+      return 'Психолог';
+    }
+
     if ($value < 18) {
+      if ($return_int) return 0;
       return 'Дети';
     }
+    if ($return_int) return 1;
     return 'Родители';
   }
 }

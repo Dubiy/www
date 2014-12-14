@@ -19,7 +19,7 @@ function __construct() {
     $data['age_start'] = $age_start;
     $data['age_stop'] = $age_stop;
   
-    echo $filter .'/'. $category . '/' . $age_start .'/'. $age_stop;
+    // echo $filter .'/'. $category . '/' . $age_start .'/'. $age_stop;
     $data['questions'] = $this->Question_site_model->get_questions($filter, $category, $age_start, $age_stop);
     
     $this->load->view('block/site_head', $data);
@@ -32,7 +32,7 @@ function __construct() {
     $this->load->model('Answer_model', '', TRUE);
     $data['question'] = $this->Question_site_model->get_question($question_id);
     if (isset($data['question']) && is_array($data['question']) && count($data['question'])) {
-      if (isset($_POST['answer'])) {
+      if (isset($_POST['answer']) && $_POST['answer'] != '') {
         $this->Answer_model->add_answer($question_id, $_POST['answer']);
       }
 

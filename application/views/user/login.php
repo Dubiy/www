@@ -16,7 +16,7 @@
 <?php
     echo $MSG;
 ?>
-   
+  <div class="reg_login_form">
   <form method="POST" action="">
     <div>
       <label>Email:</label>
@@ -28,11 +28,14 @@
     </div>
     
     <div>
-      <input type="submit" value="Вхід">
+      <input type="submit" class="submit btn btn-success" value="Вхoд">
+    <div class="reg_link">
+    
+      <a href="/user/register" class="btn btn-primary submit">Регистрация</a>
+    </div>
     </div>
 
-    <div class="reg_link">
-      <a href="/user/register">Реєстрація</a>
-    </div>
+
 
   </form>
+</div>

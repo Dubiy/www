@@ -12,11 +12,14 @@ jQuery(document).ready(function() {
   });
 
   jQuery('.age_selector .submit').unbind('click').click(function() {
+
     var age_selector = jQuery(this).closest('.age_selector');
     var filter = age_selector.attr('filter');
+    if (! filter) {
+      filter = 'all';
+    }
     var start = parseInt(age_selector.find('input.age_start').val());
     var stop = parseInt(age_selector.find('input.age_stop').val());
-
     if (start) {
       if (stop) {
         document.location = '/' + filter + '/age/' + start + '/' + stop;

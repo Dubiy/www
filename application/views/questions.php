@@ -1,17 +1,19 @@
-<div class="filter">
-  <a href="/all/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Все</a>
-  <a href="/top/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Популярные</a>
-  <a href="/unanswered/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Без ответов</a>
-  <a href="/psych/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">С участием психолога</a>
+<div class="filter questions_filter_top">
+  <a class="<?php echo (($filter == 'all') ? ('active') : ('')); ?>" href="/all/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Все</a>
+  <a class="<?php echo (($filter == 'top') ? ('active') : ('')); ?>" href="/top/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Популярные</a>
+  <a class="<?php echo (($filter == 'unanswered') ? ('active') : ('')); ?>" href="/unanswered/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">Без ответов</a>
+  <a class="<?php echo (($filter == 'psych') ? ('active') : ('')); ?>" href="/psych/<?php echo $category; echo (($age_start != 0) ? ('/' . $age_start) : ('')) . (($age_stop != 0) ? ('/' . $age_stop) : ('')); ?>">С участием психолога</a>
 </div>
 
 <div class="content_wrapper">
 <?php
   if (isset($questions) && is_array($questions) && count($questions)) {
+
     echo '<div class="questions">';
-    foreach ($questions as $question) {
+    echo '<h2>Вопрос</h2>';
+    foreach ($questions as $i => $question) {
 ?>
-      <div class="question" question_id="<?php echo $question->question_id; ?>">
+      <div class="question <?php echo (($i % 2 != 0) ? ('odd') : ('')); ?> type_<?php echo $question->type; ?>" question_id="<?php echo $question->question_id; ?>">
         <div class="question_left">
           <div class="rating">
             <div class="plus">+</div>
