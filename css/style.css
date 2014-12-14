@@ -126,6 +126,7 @@ ul.sidebar-nav {
 
 .questions_filter_top {
   height: 39px;
+  overflow: hidden;
   line-height: 39px;
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
@@ -212,4 +213,51 @@ top: -10px;
 
 .reg_login_form input {
   text-indent: 5px;
+}
+
+.add_question_form textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.add_question_form input[type=checkbox] {
+  height: auto;
+}
+
+.add_question_form .submit {
+  height: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .navbar-brand img {
+    width: 50% !important;
+
+  }
+
+  h1.sitetitle {
+    left: 100px;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  h1.sitetitle {
+    display: none;
+  }
+
 }
