@@ -229,18 +229,9 @@ top: -10px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.about_us img {
+  max-width: 100%;
+}
 
 @media screen and (max-width: 768px) {
   .navbar-brand img {
